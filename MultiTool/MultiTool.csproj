@@ -48,4 +48,21 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Resources\Literals\" />
+	  <Folder Include="Support\Libs\x64\" />
+	  <Folder Include="Support\Libs\x86\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
+	  <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\SettingsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
