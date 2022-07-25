@@ -2,9 +2,9 @@
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+	public MainPage(MenuViewModel viewModel)
 	{
 		InitializeComponent();
-	}
+        BindingContext = viewModel;
+    }
 }
-

@@ -7,8 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MultiTool.Abstractions;
 
-
-namespace MultiTool.Model.Connections
+namespace MultiTool.Model
 {
     public class SerialConnection : IConnection
     {

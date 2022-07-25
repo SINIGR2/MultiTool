@@ -8,18 +8,6 @@
     Title="MultiTool"
     Shell.FlyoutBehavior="Disabled">
 
-    <Shell.Resources>
-        <ResourceDictionary>
-            <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}"/>
-                <Setter Property="Shell.ForegroundColor" Value="{StaticResource White}"/>
-                <Setter Property="Shell.TitleColor" Value="{StaticResource White}" />
-                <Setter Property="Shell.DisabledColor" Value="#B4FFFF" />
-            </Style>
-            <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" ApplyToDerivedTypes="True" />
-        </ResourceDictionary>
-    </Shell.Resources>
-    
     <ShellContent
         Shell.NavBarIsVisible="True"
         Title="Home"

@@ -1,6 +1,6 @@
-﻿namespace MultiTool.Model.Settings;
+﻿namespace MultiTool.Model;
 
-public class Settings
+public partial class Settings
 {
     public int DeviceAddress { get; set; }
     public string PortName { get; set; }

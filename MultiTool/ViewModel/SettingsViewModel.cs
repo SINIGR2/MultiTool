@@ -1,5 +1,5 @@
 ﻿namespace MultiTool.ViewModel;
 
-internal class SettingsViewModel : ObservableObject
+public class SettingsViewModel : ObservableObject
 {
 }

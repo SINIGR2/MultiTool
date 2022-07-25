@@ -1,20 +1,36 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MultiTool.View.MainPage"
-             >
+             xmlns:viewmodel="clr-namespace:MultiTool.ViewModel"
+             x:DataType="viewmodel:MenuViewModel">
 
-    <VerticalStackLayout>
-        <Button
-            Margin="20" 
-            Text="Modbus config loader"
-            HeightRequest="100"
-            FontSize="30"/>
-        <Button
-            Margin="20"
-            Text="Settings"
-            HeightRequest="100"
-            FontSize="30" />
-    </VerticalStackLayout>
+    <Grid
+        RowDefinitions="*,auto">
+        <VerticalStackLayout>
+            <Button
+                Margin="20"
+                Text="Modbus config loader"
+                HeightRequest="100"
+                FontSize="30" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout
+            Grid.Row="1">
+            <Button
+                Margin="20"
+                Text="Connections"
+                HeightRequest="100"
+                FontSize="30" />
+            <Button
+                Margin="20"
+                Text="Settings"
+                HeightRequest="100"
+                FontSize="30"
+                Command="{Binding GoToSettingsCommand}"
+                IsEnabled="{Binding IsNotBusy}" />
+        </VerticalStackLayout>
+    </Grid>
 
 </ContentPage>
