@@ -1,36 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MultiTool.View.MainPage"
-             xmlns:viewmodel="clr-namespace:MultiTool.ViewModel"
-             x:DataType="viewmodel:MenuViewModel">
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MultiTool.View.MainPage"
+    xmlns:model="clr-namespace:MultiTool.Model"
+    xmlns:viewmodel="clr-namespace:MultiTool.ViewModel"
+    x:DataType="viewmodel:MainMenuViewModel"
+    Title="MultiTool">
 
     <Grid
         RowDefinitions="*,auto">
-        <VerticalStackLayout>
-            <Button
-                Margin="20"
-                Text="Modbus config loader"
-                HeightRequest="100"
-                FontSize="30" />
-        </VerticalStackLayout>
-
-        <VerticalStackLayout
-            Grid.Row="1">
-            <Button
-                Margin="20"
-                Text="Connections"
-                HeightRequest="100"
-                FontSize="30" />
-            <Button
-                Margin="20"
-                Text="Settings"
-                HeightRequest="100"
-                FontSize="30"
-                Command="{Binding GoToSettingsCommand}"
-                IsEnabled="{Binding IsNotBusy}" />
-        </VerticalStackLayout>
+        <CollectionView
+            ItemsSource="{Binding MainMenu}"
+            SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate
+                    x:DataType="model:MainMenuItem">
+                    <Grid
+                        Padding="20">
+                        <Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainMenuViewModel}}, Path=GoToSelectedPageCommand}"
+                                    CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
+                            <Grid
+                                ColumnDefinitions="100,*">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="50"
+                                    Source="{Binding Icon}"
+                                    WidthRequest="150" />
+                                <Label
+                                    Grid.Column="1"
+                                    Padding="10"
+                                    Text="{Binding Title}" />
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 
 </ContentPage>

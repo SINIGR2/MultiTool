@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MultiTool.View.PropertiesPage"
+    xmlns:viewmodel="clr-namespace:MultiTool.ViewModel"
+    Title="{Binding Properties.PageTitle}"
+    x:DataType="viewmodel:PropertiesViewModel">
+
+    <ScrollView>
+        <Grid
+            RowDefinitions="*,*">
+            <Label
+                Text="Настройки связи"
+                Padding="10,10,10,0"
+                FontSize="Subtitle" />
+
+            <VerticalStackLayout
+                Padding="10" Grid.Row="1">
+                <Grid
+                    ColumnDefinitions="30*,70*">
+                    <VerticalStackLayout
+                        Padding="5">
+                        <Label
+                            Text="Адрес устрйоства"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="End"
+                            HeightRequest="40"
+                            Margin="2" />
+                        <Label
+                            Text="Порт"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="End"
+                            HeightRequest="40"
+                            Margin="2" />
+                        <Label
+                            Text="Скорость"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="End"
+                            HeightRequest="40"
+                            Margin="2" />
+                        <Label
+                            Text="Таймаут"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="End"
+                            HeightRequest="40"
+                            Margin="2" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout
+                        Grid.Column="1" Padding="5">
+                        <Entry
+                            Text="{Binding Properties.DeviceAddress}"
+                            HeightRequest="40"
+                            WidthRequest="400"
+                            HorizontalOptions="Start"
+                            Margin="2" />
+                        <Entry
+                            Text="{Binding Properties.PortName}"
+                            HeightRequest="40"
+                            WidthRequest="400"
+                            HorizontalOptions="Start"
+                            Margin="2" />
+                        <Entry
+                            Text="{Binding Properties.PortSpeed}"
+                            HeightRequest="40"
+                            WidthRequest="400"
+                            HorizontalOptions="Start"
+                            Margin="2" />
+                        <Entry
+                            Text="{Binding Properties.Timeout}"
+                            HeightRequest="40"
+                            WidthRequest="400"
+                            HorizontalOptions="Start"
+                            Margin="2" />
+                    </VerticalStackLayout>
+                </Grid>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -60,7 +60,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="View\SettingsPage.xaml">
+	  <Compile Update="View\PropertiesPage.xaml.cs">
+	    <DependentUpon>PropertiesPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\PropertiesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
